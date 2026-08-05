@@ -6,16 +6,17 @@
 <title>Reviews &mdash; Proof, Not Promises</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
---ink:#14171f;
---ink-soft:#1d212c;
+--ink:#000000;
+--ink-soft:#111111;
 --paper:#ffffff;
---paper-dim:#f4f3ee;
---gold:#c9a13c;
---gold-light:#ecdca6;
---bronze:#8f6d22;
+--paper-dim:#f8f9fa;
+--gold:#DB1F40;
+--gold-light:#fde8ec;
+--bronze:#b81734;
 --muted:#71757e;
 --line:rgba(20,23,31,0.12);
 --line-dark:rgba(255,255,255,0.14);
@@ -25,7 +26,7 @@ html{scroll-behavior:smooth;}
 body{
 background:var(--paper);
 color:var(--ink);
-font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+font-family:'Satoshi', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 line-height:1.5;
 overflow-x:hidden;
 }
@@ -47,10 +48,11 @@ button{font-family:inherit; cursor:pointer;}
 /* ---------- HERO ---------- */
 .hero{
 position:relative;
-background:var(--ink);
+background:#000000;
 color:var(--paper);
-padding:2.4rem 0 0;
+padding:2.4rem 0 4rem;
 overflow:hidden;
+text-align:center;
 }
 .hero::after{
 content:'';
@@ -58,84 +60,35 @@ position:absolute; inset:auto 0 0 0; height:1px;
 background:var(--line-dark);
 }
 .hero-top{
-display:flex; justify-content:space-between; align-items:center;
+display:flex; justify-content:center; align-items:center;
 padding-bottom:2.6rem;
-gap:1rem; flex-wrap:wrap;
 }
 .brand{
-font-weight:700; font-size:1.3rem; letter-spacing:-.01em;
+font-weight:700; font-size:1.4rem; letter-spacing:-.01em;
 }
 .brand em{font-style:italic; color:var(--gold);}
-.hero-nav{display:flex; gap:2.2rem; font-size:.85rem; color:rgba(255,255,255,.6);}
-.hero-nav a:hover{color:var(--gold);}
-.hero-cta{
-border:1px solid rgba(255,255,255,.25); border-radius:999px;
-padding:.55rem 1.2rem; font-size:.82rem; font-weight:500;
-transition:border-color .2s ease, color .2s ease;
-white-space:nowrap;
-}
-.hero-cta:hover{border-color:var(--gold); color:var(--gold);}
 
 .hero-body{
-padding-bottom:2.6rem;
-display:grid;
-grid-template-columns:1fr;
-gap:1.8rem;
+display:flex; flex-direction:column; align-items:center; justify-content:center;
+text-align:center;
+gap:1.4rem;
+max-width:800px; margin:0 auto;
 }
 .hero-headline{
-font-size:clamp(1.4rem,3.2vw,2.5rem);
+font-size:clamp(1.8rem,4.2vw,3.2rem);
 line-height:1.12;
 letter-spacing:-.01em;
-max-width:20ch;
+margin:0 auto;
 }
 .hero-headline .accent{color:var(--gold); font-style:italic;}
-.hero-sub-row{
-display:flex; flex-wrap:wrap; gap:1.4rem 2.5rem; align-items:flex-end;
-justify-content:space-between;
-border-top:1px solid var(--line-dark);
-padding-top:1.4rem;
-}
 .hero-sub{
-max-width:38ch; color:rgba(255,255,255,.68); font-size:.9rem;
-flex:1 1 240px;
-}
-.hero-stats{display:flex; gap:1.4rem 1.8rem; flex-wrap:wrap;}
-.hero-stat b{
-display:block; font-weight:700; font-size:1.35rem; color:var(--gold);
-}
-.hero-stat span{font-size:.68rem; color:rgba(255,255,255,.5); text-transform:uppercase; letter-spacing:.1em; white-space:nowrap;}
-
-/* ticker */
-.ticker{
-border-top:1px solid var(--line-dark);
-background:var(--ink-soft);
-overflow:hidden;
-white-space:nowrap;
-padding:.85rem 0;
-}
-.ticker-track{
-display:inline-flex;
-animation:scroll 26s linear infinite;
-width:max-content;
-}
-.ticker-track span{
-display:inline-flex; align-items:center; gap:.6rem;
-padding:0 1.6rem; font-size:.8rem; color:rgba(255,255,255,.72);
-border-right:1px solid var(--line-dark);
-flex-shrink:0;
-}
-.ticker-track span b{color:var(--gold);font-weight:600;}
-@keyframes scroll{
-from{transform:translateX(0);}
-to{transform:translateX(-50%);}
-}
-@media (prefers-reduced-motion: reduce){
-.ticker-track{animation:none;}
+max-width:54ch; color:rgba(255,255,255,.75); font-size:1rem;
+margin:0 auto; line-height:1.6;
 }
 
 /* ---------- SECTION HEADERS ---------- */
 .section{padding:5.5rem 0;}
-.section-dark{background:var(--ink); color:var(--paper);}
+.section-dark{background:#000000; color:var(--paper);}
 .section-dim{background:var(--paper-dim);}
 .section-head{
 display:flex; justify-content:space-between; align-items:flex-end;
@@ -163,15 +116,15 @@ display:flex; flex-direction:column; gap:1.1rem;
 transition:transform .25s ease, box-shadow .25s ease;
 min-width:0;
 }
-.card:hover{transform:translateY(-4px); box-shadow:0 18px 40px -22px rgba(18,16,28,.35);}
+.card:hover{transform:translateY(-4px); box-shadow:0 18px 40px -22px rgba(219,31,64,0.25);}
 .card.wide{grid-column:span 2;}
-.stars{display:flex; gap:.2rem; color:var(--bronze); font-size:.9rem;}
+.stars{display:flex; gap:.2rem; color:var(--gold); font-size:.9rem;}
 .card p{font-size:1rem; color:var(--ink); flex:1;}
 .who{display:flex; align-items:center; gap:.75rem;}
 .avatar{
 width:42px; height:42px; border-radius:50%;
 display:flex; align-items:center; justify-content:center;
-font-weight:700; font-size:1rem; color:var(--ink);
+font-weight:700; font-size:1rem; color:var(--gold);
 background:var(--gold-light); flex-shrink:0;
 }
 .who b{display:block; font-size:.92rem;}
@@ -207,7 +160,6 @@ line-height:1.5; color:var(--paper); margin-bottom:1.6rem;
 .carousel-who b{font-size:.95rem;}
 .carousel-who span{font-size:.78rem; color:rgba(255,255,255,.55);}
 
-/* controls sit in normal flow below the quote, so nothing overlaps at any width */
 .carousel-controls{
 display:flex; align-items:center; justify-content:center;
 gap:1rem; margin-top:2.4rem;
@@ -233,97 +185,50 @@ display:grid; grid-template-columns:1fr 1fr; gap:2.6rem; align-items:center;
 }
 .video-frame{
 position:relative; border-radius:20px; overflow:hidden;
-aspect-ratio:16/9; background:#0d0f14;
+aspect-ratio:16/9; background:#000000;
 border:1px solid var(--line);
 box-shadow:0 30px 60px -30px rgba(18,16,28,.35);
 }
-.video-frame.shorts{
-aspect-ratio:9/16;
-max-width:340px;
-width:100%;
-margin:0 auto;
-border-radius:24px;
-box-shadow:0 20px 40px -15px rgba(18,16,28,.4);
-}
 .video-frame iframe{width:100%; height:100%; border:0; position:absolute; inset:0;}
-.video-poster{
-position:absolute; inset:0; z-index:2;
-background-size:cover; background-position:center; background-color:var(--ink);
-display:flex; flex-direction:column; align-items:center; justify-content:center;
-cursor:pointer; transition:opacity .35s ease, visibility .35s ease;
-}
-.video-poster.active-play{opacity:0; visibility:hidden; pointer-events:none;}
-.poster-overlay{
-position:absolute; inset:0;
-background:linear-gradient(180deg, rgba(20,23,31,0.2) 0%, rgba(20,23,31,0.75) 100%);
-}
-.play-btn{
-position:relative; z-index:3;
-width:64px; height:64px; border-radius:50%;
-background:var(--gold); color:var(--ink); border:none;
-display:flex; align-items:center; justify-content:center;
-box-shadow:0 10px 25px rgba(201,161,60,0.4);
-transition:transform .25s ease, background-color .2s ease;
-}
-.video-poster:hover .play-btn{transform:scale(1.1); background:#dfb54b;}
-.play-btn svg{width:24px; height:24px; fill:currentColor; margin-left:3px;}
-.poster-badge{
-position:absolute; bottom:1rem; left:1rem; z-index:3;
-background:rgba(20,23,31,0.85); backdrop-filter:blur(8px);
-color:rgba(255,255,255,0.9); font-size:.75rem; font-weight:500;
-padding:.3rem .75rem; border-radius:999px; border:1px solid rgba(255,255,255,0.15);
-}
 .video-copy .stars{margin-bottom:1.1rem;}
 .video-copy p.lead{font-size:1.05rem; color:var(--ink); margin-bottom:1.4rem;}
 .video-copy .who{margin-top:0;}
-.yt-link{
-display:inline-flex; align-items:center; gap:.5rem; margin-top:1.2rem;
-font-size:.85rem; font-weight:600; color:var(--bronze);
-transition:color .2s ease;
-}
-.yt-link:hover{color:var(--ink);}
 @media (max-width:860px){
 .video-layout{grid-template-columns:1fr;}
 }
 
 /* ---------- CLOSING CTA ---------- */
 .cta{
-background:var(--ink); color:var(--paper);
-border-radius:24px; padding:3rem clamp(1.4rem,5vw,4.5rem);
+background:#000000; color:var(--paper);
+border-radius:24px; padding:3.5rem clamp(1.4rem,5vw,4.5rem);
 display:flex; justify-content:space-between; align-items:center; gap:1.6rem;
 flex-wrap:wrap;
 }
 .cta h2{font-weight:700; font-size:clamp(1.6rem,4.4vw,2.7rem); max-width:18ch;}
 .cta .accent{color:var(--gold); font-style:italic;}
 .btn-solid{
-background:var(--gold); color:var(--ink); font-weight:600;
-padding:.95rem 1.9rem; border-radius:999px; border:none;
-font-size:.92rem; display:inline-flex; align-items:center; gap:.5rem;
-transition:transform .2s ease; white-space:nowrap;
+background:var(--gold); color:#ffffff; font-weight:600;
+padding:.95rem 2rem; border-radius:999px; border:none;
+font-size:.95rem; display:inline-flex; align-items:center; gap:.5rem;
+transition:transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+white-space:nowrap; box-shadow:0 4px 14px rgba(219,31,64,0.35);
 }
-.btn-solid:hover{transform:translateY(-2px);}
+.btn-solid:hover{transform:translateY(-2px); background-color:#c41937; box-shadow:0 6px 20px rgba(219,31,64,0.5);}
 
 footer{
-padding:2.2rem 0 2.8rem; text-align:center; font-size:.76rem; color:var(--muted);
+padding:2.2rem 0 2.8rem; text-align:center; font-size:.82rem; color:var(--muted);
 }
 
 /* ---------- MOBILE ---------- */
 @media (max-width:640px){
 .section{padding:3.5rem 0;}
-.hero{padding-top:1.6rem;}
+.hero{padding-top:1.6rem; padding-bottom:2.8rem;}
 .hero-top{padding-bottom:1.8rem;}
-.hero-nav{display:none;}
-.hero-body{padding-bottom:1.8rem; gap:1.4rem;}
-.hero-sub-row{padding-top:1.2rem; gap:1.4rem;}
-.hero-stats{gap:1.2rem 1.6rem;}
-.hero-stat b{font-size:1.5rem;}
+.hero-body{gap:1.2rem;}
 .section-head{margin-bottom:2rem;}
 .card{padding:1.4rem;}
 .cta{padding:2.2rem 1.4rem; text-align:left;}
 .cta h2{max-width:100%;}
-}
-@media (max-width:400px){
-.hero-stat span{white-space:normal;}
 }
 </style>
 </head>
@@ -332,39 +237,19 @@ padding:2.2rem 0 2.8rem; text-align:center; font-size:.76rem; color:var(--muted)
 <!-- ============ HERO / BANNER ============ -->
 <header class="hero">
 <div class="wrap hero-top">
-<div class="brand">Cap<em>iens</em></div>
-<a href="#cta" class="hero-cta">Book a Consultation</a>
+  <div class="brand">Cap<em>iens</em></div>
 </div>
 
 <div class="wrap hero-body">
-<span class="eyebrow" style="color:rgba(255,255,255,.55)">Client Reviews</span>
-<h1 class="hero-headline serif">
-  Reviews, not <span class="accent">résumés.</span><br>
-  That's how we sell.
-</h1>
-<div class="hero-sub-row">
+  <span class="eyebrow" style="color:rgba(255,255,255,.55)">Client Reviews</span>
+  <h1 class="hero-headline serif">
+    Reviews, not <span class="accent">résumés.</span><br>
+    That's how we sell.
+  </h1>
   <p class="hero-sub">We don't ask you to take our word for it. We hand you the phone number of someone whose pipeline we already changed.</p>
-  <div class="hero-stats">
-	<div class="hero-stat"><b>4.9/5</b><span>Average rating</span></div>
-	<div class="hero-stat"><b>120+</b><span>Client reviews</span></div>
-	<div class="hero-stat"><b>93%</b><span>Would refer us</span></div>
+  <div style="margin-top:.6rem;">
+    <a href="https://cal.id/chandra/seo-offer" target="_blank" rel="noopener noreferrer" class="btn-solid">Book a Consultation &nbsp;&rarr;</a>
   </div>
-</div>
-</div>
-
-<div class="ticker" aria-hidden="true">
-<div class="ticker-track">
-  <span>★★★★★ <b>"Rankings moved in six weeks"</b></span>
-  <span>★★★★★ <b>"Finally, a team that reports in plain English"</b></span>
-  <span>★★★★★ <b>"Traffic up 3x in a quarter"</b></span>
-  <span>★★★★★ <b>"Hired the same week"</b></span>
-  <span>★★★★★ <b>"Onboarding was painless"</b></span>
-  <span>★★★★★ <b>"Rankings moved in six weeks"</b></span>
-  <span>★★★★★ <b>"Finally, a team that reports in plain English"</b></span>
-  <span>★★★★★ <b>"Traffic up 3x in a quarter"</b></span>
-  <span>★★★★★ <b>"Hired the same week"</b></span>
-  <span>★★★★★ <b>"Onboarding was painless"</b></span>
-</div>
 </div>
 </header>
 
@@ -488,13 +373,13 @@ padding:2.2rem 0 2.8rem; text-align:center; font-size:.76rem; color:var(--muted)
 <div class="wrap">
 <div class="cta">
   <h2>Ready to become the <span class="accent">next review</span> on this page?</h2>
-  <a href="#" class="btn-solid">Book a consultation &nbsp;&rarr;</a>
+  <a href="https://cal.id/chandra/seo-offer" target="_blank" rel="noopener noreferrer" class="btn-solid">Book a consultation &nbsp;&rarr;</a>
 </div>
 </div>
 </section>
 
 <footer>
-<div class="wrap">© 2026 Capiens. All client names shown are for demonstration &mdash; replace with your own reviews.</div>
+<div class="wrap">© 2026 Capiens</div>
 </footer>
 
 <script>
