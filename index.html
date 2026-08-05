@@ -101,28 +101,32 @@ line-height:1.15; max-width:18ch;
 .section-desc{max-width:34ch; font-size:.95rem; color:var(--muted);}
 .section-dark .section-desc{color:rgba(255,255,255,.6);}
 
-/* ---------- TESTIMONIAL GRID (banner style) ---------- */
+/* ---------- TESTIMONIAL GRID (2 columns) ---------- */
 .grid{
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:1.2rem;
+grid-template-columns:repeat(2, 1fr);
+gap:1.4rem;
 }
 .card{
 background:var(--paper);
 border:1px solid var(--line);
 border-radius:18px;
-padding:1.7rem;
+padding:1.8rem;
 display:flex; flex-direction:column; gap:1.1rem;
-transition:transform .25s ease, box-shadow .25s ease;
+transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 min-width:0;
 }
-.card:hover{transform:translateY(-4px); box-shadow:0 18px 40px -22px rgba(219,31,64,0.25);}
-.card.wide{grid-column:span 2;}
+.card:hover{transform:translateY(-4px); border-color:rgba(219,31,64,0.3); box-shadow:0 18px 40px -22px rgba(219,31,64,0.25);}
 .stars{display:flex; gap:.2rem; color:var(--gold); font-size:.9rem;}
-.card p{font-size:1rem; color:var(--ink); flex:1;}
+.card p{font-size:.98rem; color:var(--ink); line-height:1.6; flex:1;}
 .who{display:flex; align-items:center; gap:.75rem;}
+.avatar-img{
+width:44px; height:44px; border-radius:50%;
+object-fit:cover; flex-shrink:0;
+border:1.5px solid var(--gold-light);
+}
 .avatar{
-width:42px; height:42px; border-radius:50%;
+width:44px; height:44px; border-radius:50%;
 display:flex; align-items:center; justify-content:center;
 font-weight:700; font-size:1rem; color:var(--gold);
 background:var(--gold-light); flex-shrink:0;
@@ -130,13 +134,8 @@ background:var(--gold-light); flex-shrink:0;
 .who b{display:block; font-size:.92rem;}
 .who span{font-size:.78rem; color:var(--muted);}
 
-@media (max-width:860px){
-.grid{grid-template-columns:1fr 1fr;}
-.card.wide{grid-column:span 2;}
-}
-@media (max-width:600px){
-.grid{grid-template-columns:1fr; gap:1rem;}
-.card.wide{grid-column:span 1;}
+@media (max-width:768px){
+.grid{grid-template-columns:1fr;}
 }
 
 /* ---------- QUOTE CAROUSEL (client testimonial style) ---------- */
@@ -264,6 +263,9 @@ padding:2.2rem 0 2.8rem; text-align:center; font-size:.82rem; color:var(--muted)
 	<div class="avatar">C</div>
 	<div><b>Chandra</b><span>Founder, Capiens</span></div>
   </div>
+  <div style="margin-top: 1.4rem;">
+    <a href="https://cal.id/chandra/seo-offer" target="_blank" rel="noopener noreferrer" class="btn-solid">Book a Consultation &nbsp;&rarr;</a>
+  </div>
 </div>
 <div class="video-frame">
   <iframe src="https://www.loom.com/embed/92667f9c23dd492ab54e333a828c89e4?hide_owner=true&amp;hide_share=true&amp;hide_title=true" title="A message from our founder" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
@@ -271,7 +273,7 @@ padding:2.2rem 0 2.8rem; text-align:center; font-size:.82rem; color:var(--muted)
 </div>
 </section>
 
-<!-- ============ TESTIMONIAL BANNER GRID ============ -->
+<!-- ============ TESTIMONIAL BANNER GRID (2 Columns) ============ -->
 <section class="section" id="stories">
 <div class="wrap">
 <div class="section-head">
@@ -283,44 +285,40 @@ padding:2.2rem 0 2.8rem; text-align:center; font-size:.82rem; color:var(--muted)
 </div>
 
 <div class="grid">
-  <div class="card wide">
+  <div class="card">
 	<div class="stars">★★★★★</div>
-	<p>We brought this team in to help us open a second office abroad, and they've been sharp, responsive, and honest about timelines from day one. Two strong hires in and we're already planning the next round.</p>
+	<p>"I've had the pleasure of working with Chandra at Truss Financial Group, where he manages our SEO and GEO strategy. His expertise in both technical SEO and local search optimization has had a tremendous impact on our online visibility and lead generation. Beyond his technical skills, Chandra is proactive, dependable, and a great team player. He communicates complex strategies in a clear and actionable way, making it easy for the team to stay aligned and move forward with confidence."</p>
 	<div class="who">
-	  <div class="avatar">JL</div>
-	  <div><b>Jordan Lehr</b><span>Managing Partner, Northfield Capital</span></div>
+	  <img src="https://getsearchpie.com/wp-content/uploads/2025/08/1619723012849.jpg" alt="Jason Nichols" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+	  <div class="avatar" style="display:none;">JN</div>
+	  <div><b>Jason Nichols</b><span>Chief Marketing Officer at Truss Financial Group</span></div>
 	</div>
   </div>
   <div class="card">
 	<div class="stars">★★★★★</div>
-	<p>Every step of my interview prep was handled with real care. I walked in confident and walked out with an offer and a raise.</p>
+	<p>"Chandra has helped us grow our website traffic by 25% and has also helped to improve our social media presence and visibility tenfold. I am extremely excited to see what he has in store for us next and I anticipate that this will be a long and healthy relationship! Thank you, Chandra. You deserve my highest recommendation!"</p>
 	<div class="who">
-	  <div class="avatar">SR</div>
-	  <div><b>Sanya Rao</b><span>Placed Candidate</span></div>
+	  <img src="https://getsearchpie.com/wp-content/uploads/2024/06/avatar3.jpg" alt="Robb Fahrion" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+	  <div class="avatar" style="display:none;">RF</div>
+	  <div><b>Robb Fahrion</b><span>Partner at Flying V Group</span></div>
 	</div>
   </div>
   <div class="card">
 	<div class="stars">★★★★★</div>
-	<p>We started with a small pilot on SEO and now have a full remote team covering content, design, and reporting. Communication has never dropped.</p>
+	<p>"Chandra started working with me in 2023 to improve rankings for one of my sites. He did a good job securing backlinks and implemented SEO strategies. He is prompt and professional. I recommend him."</p>
 	<div class="who">
-	  <div class="avatar">MK</div>
-	  <div><b>Marcus Kell</b><span>CMO, Halcyon Financial</span></div>
+	  <img src="https://getsearchpie.com/wp-content/uploads/2024/06/avatar.jpg" alt="Ryan Breslow" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+	  <div class="avatar" style="display:none;">RB</div>
+	  <div><b>Ryan Breslow</b><span>Founder at Bolt and Love</span></div>
 	</div>
   </div>
   <div class="card">
 	<div class="stars">★★★★★</div>
-	<p>They understood exactly what I wanted in a next role and never wasted my time with mismatched openings.</p>
+	<p>"Chandra is very naturally creative and fun to work with. His PR and backlinks strategies helped our new website increase traffic and improve visibility in the press."</p>
 	<div class="who">
-	  <div class="avatar">DP</div>
-	  <div><b>Dana Petrov</b><span>Senior Accountant</span></div>
-	</div>
-  </div>
-  <div class="card wide">
-	<div class="stars">★★★★★</div>
-	<p>From the first call to the final signature, the process moved faster than any agency we'd used before. They pre-screen so well that our interview-to-offer ratio has never been better.</p>
-	<div class="who">
-	  <div class="avatar">AT</div>
-	  <div><b>Aaron Tey</b><span>Country Manager</span></div>
+	  <img src="https://getsearchpie.com/wp-content/uploads/2024/06/avatar2.jpg" alt="Karissa Paddie" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+	  <div class="avatar" style="display:none;">KP</div>
+	  <div><b>Karissa Paddie</b><span>Chief Strategy Officer, Love Health</span></div>
 	</div>
   </div>
 </div>
@@ -342,20 +340,20 @@ padding:2.2rem 0 2.8rem; text-align:center; font-size:.82rem; color:var(--muted)
 
   <div class="carousel-track">
 	<div class="carousel-slide active">
-	  <p>They manage our SEO and search strategy end to end, and the lift in qualified leads has been the biggest driver of growth we've seen all year. Reporting is clear, and nothing gets lost between us and their team.</p>
-	  <div class="carousel-who"><b>Priya Anand</b><span>Chief Marketing Officer, Vantage Advisory</span></div>
+	  <p>I've had the pleasure of working with Chandra at Truss Financial Group, where he manages our SEO and GEO strategy. His expertise in both technical SEO and local search optimization has had a tremendous impact on our online visibility and lead generation.</p>
+	  <div class="carousel-who"><b>Jason Nichols</b><span>Chief Marketing Officer at Truss Financial Group</span></div>
 	</div>
 	<div class="carousel-slide">
-	  <p>Organic traffic is up meaningfully since we started, and our social presence finally looks like it belongs to a company our size. I'm genuinely excited to see where this goes next.</p>
-	  <div class="carousel-who"><b>Owen Baptiste</b><span>Partner, Fielding Growth Group</span></div>
+	  <p>Chandra has helped us grow our website traffic by 25% and has also helped to improve our social media presence and visibility tenfold. I am extremely excited to see what he has in store for us next!</p>
+	  <div class="carousel-who"><b>Robb Fahrion</b><span>Partner at Flying V Group</span></div>
 	</div>
 	<div class="carousel-slide">
-	  <p>We needed rankings fixed on a tight budget. Backlinks and on-page work were handled without any hand-holding from our side &mdash; professional, on time, done.</p>
-	  <div class="carousel-who"><b>Renee Ashford</b><span>Founder, Loom &amp; Line</span></div>
+	  <p>Chandra started working with me in 2023 to improve rankings for one of my sites. He did a good job securing backlinks and implemented SEO strategies. He is prompt and professional. I recommend him.</p>
+	  <div class="carousel-who"><b>Ryan Breslow</b><span>Founder at Bolt and Love</span></div>
 	</div>
 	<div class="carousel-slide">
-	  <p>Genuinely creative to work with. Their PR angle got our launch picked up by outlets we hadn't even pitched ourselves.</p>
-	  <div class="carousel-who"><b>Kiran Osei</b><span>Chief Strategy Officer, Verdant Health</span></div>
+	  <p>Chandra is very naturally creative and fun to work with. His PR and backlinks strategies helped our new website increase traffic and improve visibility in the press.</p>
+	  <div class="carousel-who"><b>Karissa Paddie</b><span>Chief Strategy Officer, Love Health</span></div>
 	</div>
   </div>
 
