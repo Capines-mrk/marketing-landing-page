@@ -325,42 +325,19 @@ padding:2.2rem 0 2.8rem; text-align:center; font-size:.82rem; color:var(--muted)
 </div>
 </section>
 
-<!-- ============ CLIENT TESTIMONIAL CAROUSEL ============ -->
+<!-- ============ VIDEO TESTIMONIAL ============ -->
 <section class="section section-dark" id="voices">
 <div class="wrap">
 <div class="section-head" style="justify-content:center; text-align:center;">
   <div style="width:100%; text-align:center;">
-	<span class="eyebrow" style="color:rgba(255,255,255,.55)">Client testimonials</span>
-	<h2 class="section-title serif" style="margin-top:.6rem; margin-left:auto; margin-right:auto;">Words that build trust.</h2>
+	<span class="eyebrow" style="color:rgba(255,255,255,.55)">Video testimonial</span>
+	<h2 class="section-title serif" style="margin-top:.6rem; margin-left:auto; margin-right:auto;">Hear it directly from our client.</h2>
   </div>
 </div>
 
-<div class="carousel">
-  <div class="quote-mark">"</div>
-
-  <div class="carousel-track">
-	<div class="carousel-slide active">
-	  <p>I've had the pleasure of working with Chandra at Truss Financial Group, where he manages our SEO and GEO strategy. His expertise in both technical SEO and local search optimization has had a tremendous impact on our online visibility and lead generation.</p>
-	  <div class="carousel-who"><b>Jason Nichols</b><span>Chief Marketing Officer at Truss Financial Group</span></div>
-	</div>
-	<div class="carousel-slide">
-	  <p>Chandra has helped us grow our website traffic by 25% and has also helped to improve our social media presence and visibility tenfold. I am extremely excited to see what he has in store for us next!</p>
-	  <div class="carousel-who"><b>Robb Fahrion</b><span>Partner at Flying V Group</span></div>
-	</div>
-	<div class="carousel-slide">
-	  <p>Chandra started working with me in 2023 to improve rankings for one of my sites. He did a good job securing backlinks and implemented SEO strategies. He is prompt and professional. I recommend him.</p>
-	  <div class="carousel-who"><b>Ryan Breslow</b><span>Founder at Bolt and Love</span></div>
-	</div>
-	<div class="carousel-slide">
-	  <p>Chandra is very naturally creative and fun to work with. His PR and backlinks strategies helped our new website increase traffic and improve visibility in the press.</p>
-	  <div class="carousel-who"><b>Karissa Paddie</b><span>Chief Strategy Officer, Love Health</span></div>
-	</div>
-  </div>
-
-  <div class="carousel-controls">
-	<button class="arrow" id="prevBtn" aria-label="Previous testimonial">&#8592;</button>
-	<div class="carousel-nav" id="dots"></div>
-	<button class="arrow" id="nextBtn" aria-label="Next testimonial">&#8594;</button>
+<div style="max-width: 360px; margin: 0 auto;">
+  <div style="position: relative; padding-bottom: 177.77777777777777%; height: 0; border-radius: 24px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7); border: 1px solid var(--line-dark); background: #000000;">
+    <iframe src="https://www.loom.com/embed/5e9d2b4efd554d3395f0ca4cacaaf5a2" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" title="Client Video Testimonial"></iframe>
   </div>
 </div>
 </div>
@@ -379,39 +356,6 @@ padding:2.2rem 0 2.8rem; text-align:center; font-size:.82rem; color:var(--muted)
 <footer>
 <div class="wrap">© 2026 Capiens</div>
 </footer>
-
-<script>
-// ---- Testimonial carousel ----
-const slides = document.querySelectorAll('.carousel-slide');
-const dotsWrap = document.getElementById('dots');
-let current = 0;
-
-slides.forEach((_, i) => {
-const d = document.createElement('button');
-d.className = 'dot' + (i === 0 ? ' active' : '');
-d.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
-d.addEventListener('click', () => goTo(i));
-dotsWrap.appendChild(d);
-});
-const dots = document.querySelectorAll('.dot');
-
-function goTo(i){
-slides[current].classList.remove('active');
-dots[current].classList.remove('active');
-current = (i + slides.length) % slides.length;
-slides[current].classList.add('active');
-dots[current].classList.add('active');
-}
-
-document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
-document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
-
-let autoplay = setInterval(() => goTo(current + 1), 6000);
-document.querySelector('.carousel').addEventListener('mouseenter', () => clearInterval(autoplay));
-document.querySelector('.carousel').addEventListener('mouseleave', () => {
-autoplay = setInterval(() => goTo(current + 1), 6000);
-});
-</script>
 
 </body>
 </html>
