@@ -63,9 +63,8 @@ display:flex; justify-content:flex-start; align-items:center;
 padding-bottom:2.6rem;
 }
 .brand{
-font-weight:700; font-size:1.4rem; letter-spacing:-.01em;
+font-weight:700; font-size:1.4rem; letter-spacing:-.01em; color:#ffffff;
 }
-.brand em{font-style:italic; color:var(--gold);}
 
 .hero-body{
 display:grid; grid-template-columns:1fr 1fr; gap:2.6rem; align-items:center;
@@ -83,7 +82,7 @@ letter-spacing:-.01em;
 margin:0;
 text-transform:uppercase;
 }
-.hero-headline .accent{color:var(--gold); font-style:italic;}
+.hero-headline .accent{color:var(--gold);}
 .hero-sub{
 max-width:100%; color:rgba(255,255,255,.85); font-size:1.05rem;
 margin:0; line-height:1.6;
@@ -99,6 +98,16 @@ width:100%;
 .section-head{
 display:flex; justify-content:space-between; align-items:flex-end;
 gap:2rem; margin-bottom:2.8rem; flex-wrap:wrap;
+}
+.section-head-center{
+display:flex; flex-direction:column; align-items:center; text-align:center;
+margin-bottom:2.8rem; gap:.6rem; width:100%;
+}
+.section-head-center .section-title{
+max-width:100%; width:100%; text-align:center; margin-top:.4rem;
+}
+.section-head-center .section-desc{
+max-width:100%; width:100%; text-align:center;
 }
 .section-title{
 font-weight:700; font-size:clamp(1.8rem,4.4vw,3rem);
@@ -244,7 +253,7 @@ padding:2.2rem 0 2.8rem; text-align:center; font-size:.82rem; color:var(--muted)
 <!-- ============ HERO / BANNER ============ -->
 <header class="hero">
 <div class="wrap hero-top">
-  <div class="brand">Cap<em>iens</em></div>
+  <div class="brand">Capiens</div>
 </div>
 
 <div class="wrap hero-body">
@@ -269,11 +278,9 @@ padding:2.2rem 0 2.8rem; text-align:center; font-size:.82rem; color:var(--muted)
 <!-- ============ TESTIMONIAL BANNER GRID (2 Columns) ============ -->
 <section class="section" id="stories">
 <div class="wrap">
-<div class="section-head">
-  <div>
-	<span class="eyebrow">Hear from our customers</span>
-	<h2 class="section-title serif" style="margin-top:.6rem;">Every card here is a real relationship.</h2>
-  </div>
+<div class="section-head-center">
+  <span class="eyebrow">Hear from our customers</span>
+  <h2 class="section-title serif">Every Card Here is a Real Relationship.</h2>
   <p class="section-desc">A running record of what it's actually like to work with us, in the words of the people who did.</p>
 </div>
 
