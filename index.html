@@ -52,7 +52,6 @@ background:#000000;
 color:var(--paper);
 padding:2.4rem 0 4rem;
 overflow:hidden;
-text-align:center;
 }
 .hero::after{
 content:'';
@@ -60,7 +59,7 @@ position:absolute; inset:auto 0 0 0; height:1px;
 background:var(--line-dark);
 }
 .hero-top{
-display:flex; justify-content:center; align-items:center;
+display:flex; justify-content:flex-start; align-items:center;
 padding-bottom:2.6rem;
 }
 .brand{
@@ -69,21 +68,28 @@ font-weight:700; font-size:1.4rem; letter-spacing:-.01em;
 .brand em{font-style:italic; color:var(--gold);}
 
 .hero-body{
-display:flex; flex-direction:column; align-items:center; justify-content:center;
-text-align:center;
-gap:1.4rem;
-max-width:800px; margin:0 auto;
+display:grid; grid-template-columns:1fr 1fr; gap:2.6rem; align-items:center;
+text-align:left;
+max-width:1180px; margin:0 auto;
+}
+.hero-left{
+display:flex; flex-direction:column; align-items:flex-start;
+gap:1.2rem;
 }
 .hero-headline{
-font-size:clamp(1.8rem,4.2vw,3.2rem);
+font-size:clamp(1.8rem,3.5vw,3rem);
 line-height:1.12;
 letter-spacing:-.01em;
-margin:0 auto;
+margin:0;
+text-transform:uppercase;
 }
 .hero-headline .accent{color:var(--gold); font-style:italic;}
 .hero-sub{
-max-width:54ch; color:rgba(255,255,255,.75); font-size:1rem;
-margin:0 auto; line-height:1.6;
+max-width:100%; color:rgba(255,255,255,.85); font-size:1.05rem;
+margin:0; line-height:1.6;
+}
+.hero-right{
+width:100%;
 }
 
 /* ---------- SECTION HEADERS ---------- */
@@ -185,8 +191,8 @@ display:grid; grid-template-columns:1fr 1fr; gap:2.6rem; align-items:center;
 .video-frame{
 position:relative; border-radius:20px; overflow:hidden;
 aspect-ratio:16/9; background:#000000;
-border:1px solid var(--line);
-box-shadow:0 30px 60px -30px rgba(18,16,28,.35);
+border:1px solid var(--line-dark);
+box-shadow:0 30px 60px -30px rgba(0,0,0,.5);
 }
 .video-frame iframe{width:100%; height:100%; border:0; position:absolute; inset:0;}
 .video-copy .stars{margin-bottom:1.1rem;}
@@ -194,6 +200,8 @@ box-shadow:0 30px 60px -30px rgba(18,16,28,.35);
 .video-copy .who{margin-top:0;}
 @media (max-width:860px){
 .video-layout{grid-template-columns:1fr;}
+.hero-body{grid-template-columns:1fr; text-align:center;}
+.hero-left{align-items:center;}
 }
 
 /* ---------- CLOSING CTA ---------- */
@@ -223,7 +231,7 @@ padding:2.2rem 0 2.8rem; text-align:center; font-size:.82rem; color:var(--muted)
 .section{padding:3.5rem 0;}
 .hero{padding-top:1.6rem; padding-bottom:2.8rem;}
 .hero-top{padding-bottom:1.8rem;}
-.hero-body{gap:1.2rem;}
+.hero-left{gap:1rem;}
 .section-head{margin-bottom:2rem;}
 .card{padding:1.4rem;}
 .cta{padding:2.2rem 1.4rem; text-align:left;}
@@ -240,38 +248,23 @@ padding:2.2rem 0 2.8rem; text-align:center; font-size:.82rem; color:var(--muted)
 </div>
 
 <div class="wrap hero-body">
-  <span class="eyebrow" style="color:rgba(255,255,255,.55)">Client Reviews</span>
-  <h1 class="hero-headline serif">
-    Reviews, not <span class="accent">résumés.</span><br>
-    That's how we sell.
-  </h1>
-  <p class="hero-sub">We don't ask you to take our word for it. We hand you the phone number of someone whose pipeline we already changed.</p>
-  <div style="margin-top:.6rem;">
-    <a href="https://cal.id/chandra/seo-offer" target="_blank" rel="noopener noreferrer" class="btn-solid">Book a Consultation &nbsp;&rarr;</a>
+  <div class="hero-left">
+    <span class="eyebrow" style="color:rgba(255,255,255,.55)">Client Reviews</span>
+    <h1 class="hero-headline serif">DON'T HIRE US YET.<br>
+      <span class="accent">LET US EARN IT.</span>
+    </h1>
+    <p class="hero-sub">We're so confident in our SEO team and process that we'll work with you for 1 MONTH COMPLETELY FREE.</p>
+    <div style="margin-top:.4rem;">
+      <a href="https://cal.id/chandra/seo-offer" target="_blank" rel="noopener noreferrer" class="btn-solid">Book a Consultation &nbsp;&rarr;</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="video-frame">
+      <iframe src="https://www.loom.com/embed/92667f9c23dd492ab54e333a828c89e4?hide_owner=true&amp;hide_share=true&amp;hide_title=true" title="A message from our founder" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+    </div>
   </div>
 </div>
 </header>
-
-<!-- ============ FOUNDER / ABOUT ============ -->
-<section class="section section-dim" id="founder">
-<div class="wrap video-layout">
-<div class="video-copy">
-  <span class="eyebrow">From the founder</span>
-  <h2 class="section-title serif" style="margin-top:.6rem; margin-bottom:1.2rem;">Why we started Capiens.</h2>
-  <p class="lead">Capiens was built to help ambitious brands scale organic search, drive high-intent leads, and outpace the competition. We deliver data-backed SEO strategies, premium authority building, and relentless execution &mdash; so your marketing scales effortlessly without agency bloat.</p>
-  <div class="who">
-	<div class="avatar">C</div>
-	<div><b>Chandra</b><span>Founder, Capiens</span></div>
-  </div>
-  <div style="margin-top: 1.4rem;">
-    <a href="https://cal.id/chandra/seo-offer" target="_blank" rel="noopener noreferrer" class="btn-solid">Book a Consultation &nbsp;&rarr;</a>
-  </div>
-</div>
-<div class="video-frame">
-  <iframe src="https://www.loom.com/embed/92667f9c23dd492ab54e333a828c89e4?hide_owner=true&amp;hide_share=true&amp;hide_title=true" title="A message from our founder" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
-</div>
-</div>
-</section>
 
 <!-- ============ TESTIMONIAL BANNER GRID (2 Columns) ============ -->
 <section class="section" id="stories">
